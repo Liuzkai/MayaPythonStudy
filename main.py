@@ -1,12 +1,10 @@
-# _*_ coding: utf-8 _*_
-# @FileName:main.py
-# @Data:2024-10-25 : 18 : 24
-# @Author:zhongkailiu
-# @Contact:zhongkailiu@tencent.com
-'''
-launch:
-import main.py as my_FileName
-reload(my_FileName)
-my_FileName.main()
-'''
-print("hello")
+import sys
+sys.path.append("E:/Git/MayaPythonStudy") # 将python目录加入系统路径
+
+import importlib
+from OpenMayaScripts import openMayaApi as omapi
+importlib.reload(omapi) # 重载模块来维持我们的更新
+
+if __name__ == "__main__":
+    omapi.selectionlist_test()
+    print("main finished !")
